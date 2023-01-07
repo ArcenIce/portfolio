@@ -43,7 +43,7 @@
                 size: size,
                 margin: Math.floor(Math.random()*(window.innerWidth-(size)))
             });
-            setTimeout(() => this.bubblesList = this.bubblesList.slice(1), 19500);
+            setTimeout(() => this.bubblesList = this.bubblesList.slice(1), 29500);
         }, 500)
     },
   }
@@ -53,6 +53,7 @@
 
     body{
         background: transparent;
+        height: 100%;
     }
 
     svg {
@@ -60,6 +61,7 @@
     }
 
     .bubbles {
+        background: transparent;
         display:flex;
         flex-direction:column; 
         flex:1;
@@ -73,7 +75,7 @@
         width: 150px;
         height: 150px;
         border-radius: 250px;
-        animation: wobble 20s ease-in-out alternate infinite, totop 20s linear infinite;
+        animation: wobble 30s ease-in-out alternate infinite, totop 30s linear infinite;
         animation-timing-function: ease-in-out;
         z-index:2;
         position: absolute;
@@ -85,7 +87,7 @@
         }
 
         to {
-            transform:translateY(-250vh)
+            transform:translateY(-750vh);
         }
     }
 
