@@ -2,7 +2,7 @@
   <v-app>
     <v-main class="px-12">
 
-      <v-row no-gutters class="py-12">
+      <v-row no-gutters class="py-12" style="z-index: 10;">
         <v-col cols="auto">
           <v-ico name="oi-home" scale="1.6" />
         </v-col>
