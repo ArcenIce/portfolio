@@ -251,7 +251,7 @@ const particleOptions = {
         },
         "random": false,
         "size": true,
-        "speed": 80,
+        "speed": 50,
         "spin": {
           "acceleration": 0.5,
           "enable": false
