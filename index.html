@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Alex Lovergne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
       body {
         margin: 0;
@@ -17,6 +20,7 @@
       }
       body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       }
@@ -27,6 +31,12 @@
         border: 14px solid;
         border-color: #000 #0000;
         animation: l1 1s infinite;
+        display: block;
+      }
+      .roboto-regular {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
       }
       @keyframes l1 {to{transform: rotate(.5turn)}}
     </style>
@@ -34,6 +44,7 @@
   </head>
   <body>
     <div class="loader" id="loader">&nbsp;</div>
+    <div class="roboto-regular" id="loader-text" style="margin-top: 20px; font-size: 18px;">Don't quit, this can take some time...</div>
     <canvas id="canvas3d"></canvas>
     <script type="module">
       import { Application } from './runtime.js';
@@ -48,6 +59,7 @@
         }
       ).then(() => {
         document.getElementById("loader").style.display = "none";
+        document.getElementById("loader-text").style.display = "none";
         document.getElementById("canvas3d").style.display = "block";
 
         app.controls.gameControl.keyAssignments.push(['moveNegZ', 'W'])
