@@ -13,17 +13,44 @@
         height: 100%;
       }
       canvas {
-        display: block;
+        display: none;
       }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .loader {
+        width: 100px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 14px solid;
+        border-color: #000 #0000;
+        animation: l1 1s infinite;
+      }
+      @keyframes l1 {to{transform: rotate(.5turn)}}
     </style>
+    <link rel="preload" href="./scene.splinecode" as="fetch">
   </head>
   <body>
+    <div class="loader" id="loader">&nbsp;</div>
     <canvas id="canvas3d"></canvas>
     <script type="module">
       import { Application } from './runtime.js';
       const canvas = document.getElementById('canvas3d');
       const app = new Application(canvas);
-      app.load('./scene.splinecode');
+      app.load(
+        './scene.splinecode',
+        undefined,
+        {
+          credentials: 'include',
+          mode: 'no-cors',
+        }
+      ).then(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("canvas3d").style.display = "block";
+      })
+      
     </script>
   </body>
 </html>
