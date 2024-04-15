@@ -50,13 +50,8 @@
         document.getElementById("loader").style.display = "none";
         document.getElementById("canvas3d").style.display = "block";
 
-        window.addEventListener('keydown', (e) => {
-          if (e.key == 'a') app.controls.gameControl.keyAssignments[1][1] = 'A';
-          if (e.key == 'q') app.controls.gameControl.keyAssignments[1][1] = 'Q';
-          if (e.key == 'w') app.controls.gameControl.keyAssignments[0][1] = 'W';
-          if (e.key == 'z') app.controls.gameControl.keyAssignments[0][1] = 'Z';
-        });
-
+        app.controls.gameControl.keyAssignments.push(['moveNegZ', 'W'])
+        app.controls.gameControl.keyAssignments.push(['moveNegX', 'A'])
       })
       
     </script>
